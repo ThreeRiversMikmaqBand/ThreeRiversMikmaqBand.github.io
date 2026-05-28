@@ -55,6 +55,17 @@
     .four{grid-template-columns:repeat(4,1fr)}
     .card{background:rgba(255,255,255,.82);border:1px solid rgba(24,33,39,.08);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.35rem}
     .card h3{margin:.2rem 0 .55rem;font-size:1.35rem;line-height:1.15;color:var(--deep)}
+
+    .photoCard{padding:0;overflow:hidden}
+    .photoCard img{display:block;width:100%;height:260px;object-fit:cover}
+    .photoCard .photoBody{padding:1.25rem}
+    .eventFeature{display:grid;grid-template-columns:.85fr 1.15fr;gap:1rem;align-items:center;margin-bottom:1.2rem;background:linear-gradient(135deg,#fff4d1,#fff);border:2px solid rgba(207,32,47,.18)}
+    .eventFeature img{width:100%;border-radius:20px;box-shadow:0 14px 32px rgba(14,31,53,.14)}
+    .eventDetails{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin:1rem 0}
+    .detailBox{background:#fff;border:1px solid rgba(24,33,39,.08);border-radius:16px;padding:.85rem;font-weight:800}
+    .detailBox span{display:block;color:var(--muted);font-size:.82rem;font-weight:700}
+    .donationBox{margin-top:1.2rem;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:1.2rem}
+    .donationBox strong{color:#fff7d6}
     .pill{display:inline-flex;align-items:center;border-radius:999px;background:#edf4ff;color:var(--blue);font-weight:900;padding:.35rem .7rem;font-size:.82rem;margin-bottom:.7rem}
     .warm{background:linear-gradient(135deg,#fff6dd,#fff)}
     .blue{background:linear-gradient(135deg,#eff5ff,#fff)}
@@ -96,8 +107,8 @@
     footer .wrap{display:flex;justify-content:space-between;gap:1rem;align-items:center;flex-wrap:wrap}
     footer img{width:60px;height:60px;object-fit:contain;background:#fff;border-radius:50%}
     .topLink{position:fixed;right:1rem;bottom:1rem;background:var(--deep);color:#fff;text-decoration:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;box-shadow:var(--shadow);z-index:80}
-    @media (max-width:920px){.heroInner,.two,.contactWrap{grid-template-columns:1fr}.three,.four,.featureList,.council,.linkGrid{grid-template-columns:1fr 1fr}.hero{min-height:auto}}
-    @media (max-width:720px){.menuBtn{display:inline-flex}nav ul{display:none;position:absolute;left:1rem;right:1rem;top:74px;background:#fff;border-radius:22px;padding:.8rem;box-shadow:var(--shadow);border:1px solid rgba(24,33,39,.08)}nav ul.open{display:grid}nav a{display:block}.brand span{font-size:.92rem}section{padding:3.5rem 1rem}.heroInner{padding-top:4rem}.heroCard .mini,.three,.four,.featureList,.council,.linkGrid{grid-template-columns:1fr}.actions .btn{width:100%}}
+    @media (max-width:920px){.heroInner,.two,.contactWrap,.eventFeature{grid-template-columns:1fr}.three,.four,.featureList,.council,.linkGrid{grid-template-columns:1fr 1fr}.hero{min-height:auto}}
+    @media (max-width:720px){.eventDetails{grid-template-columns:1fr}.menuBtn{display:inline-flex}nav ul{display:none;position:absolute;left:1rem;right:1rem;top:74px;background:#fff;border-radius:22px;padding:.8rem;box-shadow:var(--shadow);border:1px solid rgba(24,33,39,.08)}nav ul.open{display:grid}nav a{display:block}.brand span{font-size:.92rem}section{padding:3.5rem 1rem}.heroInner{padding-top:4rem}.heroCard .mini,.three,.four,.featureList,.council,.linkGrid{grid-template-columns:1fr}.actions .btn{width:100%}}
   </style>
 </head>
 <body>
@@ -156,7 +167,21 @@
 
     <section id="news">
       <div class="wrap">
-        <div class="sectionTitle"><div><span class="pill">What’s New</span><h2>Current Projects</h2><p class="lead">The Band is building practical, community-driven projects that address urgent needs while creating hope, employment, and long-term capacity.</p></div></div>
+        <div class="sectionTitle"><div><span class="pill">What’s New</span><h2>Current Projects & Upcoming Events</h2><p class="lead">The Band is building practical, community-driven projects that address urgent needs while creating hope, employment, and long-term capacity.</p></div></div>
+        <article class="card eventFeature" id="firesmart-event">
+          <div><img src="firesmart_meeting_poster.png" alt="Wildfire and Emergency Preparedness Meeting poster"></div>
+          <div>
+            <span class="pill" style="background:#fff1f1;color:var(--red)">Upcoming Event</span>
+            <h3>Wildfire & Emergency Preparedness Meeting</h3>
+            <p>Join Three Rivers Mi’kmaq Band and community partners to learn practical steps for protecting your home, family, and community. The meeting will focus on wildfire awareness, FireSmart preparedness, and emergency planning for Bay St. George South.</p>
+            <div class="eventDetails">
+              <div class="detailBox"><span>Date</span>June 2</div>
+              <div class="detailBox"><span>Time</span>6–8 PM</div>
+              <div class="detailBox"><span>Location</span>Three Rivers Lion’s Club</div>
+            </div>
+            <p><strong>$250 prize draw</strong> plus multiple other prizes. In partnership with Red Cross, Bay St. George South Fire Department, and FireSmart Newfoundland.</p>
+          </div>
+        </article>
         <div class="grid three">
           <article class="card project warm"><h3>New Band Office</h3><p>A new community service space to support administration, outreach, programs, food security, and access to services.</p></article>
           <article class="card project red"><h3>Food Bank & Food Hub</h3><p>Non-judgmental food support for community members, with plans to expand community meals and food security programming.</p></article>
@@ -164,6 +189,7 @@
           <article class="card project blue"><h3>Housing Supports</h3><p>Developing safe, supportive housing options and wraparound services for families, seniors, and people at risk of homelessness.</p></article>
           <article class="card project green"><h3>Agriculture & Food Sovereignty</h3><p>Planning local food-growing initiatives, gardens, greenhouses, workshops, and long-term food sovereignty projects.</p></article>
           <article class="card project warm"><h3>Community Outreach</h3><p>Building participation through workshops, cultural activities, volunteer opportunities, and practical supports for rural residents.</p></article>
+          <article class="card photoCard project blue"><img src="Parachute_Photo.jpg" alt="Children and community members using a colourful parachute in a school gym"><div class="photoBody"><p>Three Rivers Mi’kmaq Band was pleased to support E. A. Butler All Grade with sports equipment, including this parachute and a referee chair.</p></div></article>
         </div>
       </div>
     </section>
@@ -191,6 +217,7 @@
           <div class="feature"><h3>Donations Welcome</h3><p>Community members, businesses, and partners can help by donating food, supplies, or financial support.</p></div>
           <div class="feature"><h3>Volunteer With Us</h3><p>Help sort food, prepare hampers, support events, or assist with community outreach.</p></div>
         </div>
+        <div class="donationBox"><h3>Food Bank Donations by Direct Deposit</h3><p>Financial donations to support the Food Bank can be sent by direct deposit or e-transfer to <strong><a href="mailto:threeriversindianband@gmail.com">threeriversindianband@gmail.com</a></strong>.</p></div>
         <div class="actions" style="margin-top:1.4rem"><a class="btn primary" href="mailto:threeriversindianband@gmail.com?subject=Food%20Bank%20Donation">Donate or Volunteer</a><a class="btn secondary" href="#contact">Need Food Support?</a></div>
       </div>
     </section>
